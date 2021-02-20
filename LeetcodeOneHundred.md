@@ -50,3 +50,53 @@ The one hundred leetcode questions I keep in my backpocket but will not waste ti
 48. Triangle: https://leetcode.com/problems/triangle
 49. Flatten Nested List Iterator: https://leetcode.com/problems/flatten-nested-list-iterator
 50. All Nodes Distance K in Binary Tree: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree
+51. Product of Array Except Self: https://leetcode.com/problems/product-of-array-except-self
+52. Coin Change: https://leetcode.com/problems/coin-change
+53. Snakes and Ladders: https://leetcode.com/problems/snakes-and-ladders
+54. Boundary of Binary Tree: https://leetcode.com/problems/boundary-of-binary-tree
+55. Find K Closest Elements: https://leetcode.com/problems/find-k-closest-elements
+56. Binary Tree Zigzag Level Order Traversal: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal
+57. Find K Pairs with Smallest Sums: https://leetcode.com/problems/find-k-pairs-with-smallest-sums
+58. Implementation of Tic-Tac-Toe game: https://www.geeksforgeeks.org/implementation-of-tic-tac-toe-game/
+59. Peeking Iterator: https://leetcode.com/problems/peeking-iterator
+60. Course Schedule: https://leetcode.com/problems/course-schedule
+61. Serialize and Deserialize BST: https://leetcode.com/problems/serialize-and-deserialize-bst
+62. Search in Rotated Sorted Array: https://leetcode.com/problems/search-in-rotated-sorted-array
+63. Binary Tree Level Order Traversal: https://leetcode.com/problems/binary-tree-level-order-traversal
+64. 3Sum: https://leetcode.com/problems/3sum
+65. Game of Life: https://leetcode.com/problems/game-of-life
+66. Rotate Image: https://leetcode.com/problems/rotate-image
+67. Jump Game 2: https://leetcode.com/problems/jump-game-ii
+68. Group Anagrams: https://leetcode.com/problems/group-anagrams
+69. Merge Intervals: https://leetcode.com/problems/merge-intervals
+70. Unique Paths: https://leetcode.com/problems/unique-paths
+71. Letter Combinations of a Phone Number: https://leetcode.com/problems/letter-combinations-of-a-phone-number
+72. Top K Frequent Elements: https://leetcode.com/problems/top-k-frequent-elements
+73. Top K Frequent Words: https://leetcode.com/problems/top-k-frequent-words
+74. Container with Most Water: https://leetcode.com/problems/container-with-most-water
+75. Restore IP Addresses: https://leetcode.com/problems/restore-ip-addresses
+76. Kth Largest Element in an Array: https://leetcode.com/problems/kth-largest-element-in-an-array
+77. Combination Sum: https://leetcode.com/problems/combination-sum
+78. Integer to Roman: https://leetcode.com/problems/integer-to-roman
+79. 3Sum Closest: https://leetcode.com/problems/3sum-closest
+80. Next Greater Element III: https://leetcode.com/problems/next-greater-element-iii
+81. Simplify Path: https://leetcode.com/problems/simplify-path
+82. Maximal Square: https://leetcode.com/problems/maximal-square
+83. Add Two Numbers II: https://leetcode.com/problems/add-two-numbers-ii
+84. Word Break II: https://leetcode.com/problems/word-break-ii
+85. Populating Next Right Pointers in Each Node: https://leetcode.com/problems/populating-next-right-pointers-in-each-node
+86. Partition List: https://leetcode.com/problems/partition-list
+87. Daily Temperatures: https://leetcode.com/problems/daily-temperatures
+88. Decode String: https://leetcode.com/problems/decode-string
+89. Word Search: https://leetcode.com/problems/word-search
+90. Insert Delete GetRandom O(1): https://leetcode.com/problems/insert-delete-getrandom-o1
+91. Shuffle an Array: https://leetcode.com/problems/shuffle-an-array
+92. Construct Binary Tree from Preorder and Inorder Traversal: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
+93. Odd Even Linked List: https://leetcode.com/problems/odd-even-linked-list
+94. Swap Nodes in Pairs: https://leetcode.com/problems/swap-nodes-in-pairs
+95. Course Schedule II: https://leetcode.com/problems/course-schedule-ii
+96. Minimum Path Sum: https://leetcode.com/problems/minimum-path-sum
+97. Single Element in a Sorted Array: https://leetcode.com/problems/single-element-in-a-sorted-array
+98. Add and Search Word - Data structure design: https://leetcode.com/problems/design-add-and-search-words-data-structure
+99. Find Duplicate Subtrees: https://leetcode.com/problems/find-duplicate-subtrees
+100. Valid Parenthesis String: https://leetcode.com/problems/valid-parenthesis-string
