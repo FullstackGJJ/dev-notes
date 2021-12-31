@@ -12,16 +12,14 @@
 - Racket Lang - TBD
 - Scientific expert driven design - 3
 
-Tutorials:
+## Tutorials:
 - https://docs.racket-lang.org/pkg/getting-started.html
 
-How-to's:
-- 
+## How-to's:
 
-Explanations:
-- 
+## Explanations:
 
-References:
+## References:
 - https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
 - https://github.com/dannypsnl/raco-watch
 - https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt
