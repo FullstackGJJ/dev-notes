@@ -23,9 +23,6 @@ Explanations:
 
 References:
 - https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
-- https://github.com/dannypsnl/raco-watch
-- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt
-- https://github.com/zyrolasting/file-watchers/blob/master/robust-watch.rkt
 
 ## Thought Process:
 ---

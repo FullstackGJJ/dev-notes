@@ -1,4 +1,4 @@
-# For creating racket auto re-running CLI for faster feedback crucial for development
+# For creating racket auto re-running CLI for faster feedback loop crucial for development
 
 **Problem**: Racket lang eco system currently does not have a polling file watcher that is crucial for people who use docker containers as development environments but still want to have tests to auto re-run
 
@@ -26,6 +26,9 @@ References:
 - https://github.com/dannypsnl/raco-watch
 - https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt
 - https://github.com/zyrolasting/file-watchers/blob/master/robust-watch.rkt
+- https://docs.racket-lang.org/file-watchers/index.html#%28def._%28%28lib._file-watchers%2Fmain..rkt%29._robust-watch%29%29
+- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt#L60
+- https://docs.racket-lang.org/raco/exe.html
 
 ## Thought Process:
 ---
@@ -59,6 +62,78 @@ References:
 : Based on examining the CLI code for `file-watchers` (https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt) and also the code of interest (https://github.com/zyrolasting/file-watchers/blob/master/robust-watch.rkt) it looks like there is no great way to pipe a command into the CLI for it to poll on the filesystem to watch for changes. I expect that I would have to create a new library/package that utilizes `file-watchers` similar to how `raco-watch` does but expose enough functionality of `file-watchers` that a user can call the `robust-watch` functionality that uses polling. I will see what will go into making a new package that can be deployed and installed onto docker images and it should be usable across the board.
 
 **Observation**
-: 
+: When I looked into the process of making a new package, I was able to find that there is a way to deploy and install packages by simply cloning a repo and installing it with `raco pkg install` while being inside the repo directory. I see how making packages install globally by default simplifies a lot of deployment processes.
+
+---
+
+**Question**
+: _What pieces do I need to have a minimally working package that can be called by raco?_
+
+**Hypothesis**
+: Based on knowing _how `raco-watch` edited its `info.rkt` and the way the code calls `file-watcher` inside `main.rkt`,_ I expect _that piping the command into file-watcher but allow the user to call more options can be more flexible_  because _file-watcher already enables so many options out of the gate_. I will try _playing around with `raco-watch` code but only have it expose `file-watcher` polling code_ and _a working program that can re-run tests upon file-change_ should be the result
+
+**Observation**
+: When I tried _porting over the `raco watch` code_ I did get _it to work with the `file-watcher` watch module but not yet with the `robust-watch` module_.  _I also didn't get the prefix declaration for module imports to work correctly yet. I'm not sure how to get the `robust-watch` to work yet as I'm not sure it's just a simple swap from using the `watch` module from `file-watcher`_
+
+---
+
+**Question**
+: _How do I run a `file-watcher` `robust-watch` instead of the normal `watch` inside of a `thread-wait`?_
+
+**Hypothesis**
+: Based on knowing _the fact that `file-watcher` already has `robust-watch`_ I expect _to be able to call it to execute a system command_ because _the default `watch` module allows for that_. I will try _to examine different ways to call it in the repl_ and _there should be a way to feed the commands I want to be re-run_
+
+**Observation**
+: When I tried _examining different ways to call `file-watcher` -> `robust-watch` in the repl_ I didn't get _to see the re-run working in the repl_.  _I think this means that there's something I'm not understanding with getting main modules to work in repl. Will have to think of other strategies_
+
+---
+
+**Question**
+: _How does the interface for `file-watcher` CLI use `watch` contract module allow the use of `robust-watch`?_
+
+**Hypothesis**
+: Based on _https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt#L60_ I expect _passing in `robust-watch` in as the `method` argument will work_ because _the interface for watch https://github.com/zyrolasting/file-watchers/blob/master/main.rkt#L54 performs whatever lambda method you provide onto the `on-activity` argument_. I will try _copying https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt#L60 way of calling watch and place displayln_ and _the code should run_
+
+**Observation**
+: When I tried _copying `file-watcher` CLI example_ I did get _the code to run_.  _I need to find where the stand alone executable lives though_
+
+---
+
+**Question**
+: _How do you create a racket executable?_
+
+**Hypothesis**
+: Based on _documentation https://docs.racket-lang.org/raco/exe.html_ I expect _to be able to create a Unix executable_ because _one of the flags seem to give that feature_. I will try _the command `raco exe main.rkt_ and _an executable called `main`_ should come out
+
+**Observation**
+: When I tried _the command `raco exe main.rkt -o watcher_ I did get _a `main` executable to come out and was able to run it with `./main --help` call. I also unfortunately saw that it ran the same command `raco test .` 3 times just as the undesirable behavior that I saw from `raco watch` program_.  _I'm not sure why it's having the same issue, especially when I'm specifically using the file polling way for detecting file changes_
+
+---
+
+**Question**
+: _Why is `thread-wait (watch path* (lambda (lst) (system (cmd)) displayln robust-watch))` causing the command `raco test .` to run 3 duplicate times upon file change?_
+
+**Hypothesis**
+: Based on seeing _console output of thread logs it seems that `intensive watcher` threads are the ones running instead of the `robust watchers` that I was hoping for._ I expect _that if robust watchers are running instead of intensive watchers then I will get the behavior I want_ because _the intensive watcher threads are the ones that are having issues with the file change notifications for WSL and docker containers_. I will try _to explore why intensive watcher threads are running instead of robust watchers_ and _I will learn more about how file-watcher spawns threads_
+
+**Observation**
+: When I tried _to explore why intensive watcher threads are running instead of robust watchers_ I did/didn't get _expected-outcome_.  _Analysis of result_
+
+---
+
+**Question**
+: _Question_
+
+**Pursuit**
+
+|Idea|Result|
+|-|-|
+|Based on (info), it's possible (that XYZ assertion is correct), (optional explanation)|When (ABC action was performed), (certain result happened), (optional analysis)|
+
+- Idea: Based on (info), it's possible (that XYZ assertion is correct), (optional explanation)
+  - Result: When (ABC action was performed), (certain result happened), (optional analysis)
+
+**Answer**
+: _Answer_
 
 ---
