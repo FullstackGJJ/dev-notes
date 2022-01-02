@@ -2,15 +2,20 @@
 
 **Problem**: Racket lang eco system currently does not have a polling file watcher that is crucial for people who use docker containers as development environments but still want to have tests to auto re-run
 
-**Solution**: TBD
+**Solution**: Fully working new package named raco-watcher that is a polling based file watcher (https://github.com/FullstackGJJ/raco-watcher)
 
 **Relevant skills before**:
 - Racket Lang - 0
-- Scientific expert driven design - 3
+- Scientific solution exploration - 0
 
 **Relevant skills before**:
-- Racket Lang - TBD
-- Scientific expert driven design - 3
+- Racket Lang - 1
+- Scientific solution exploration - 3
+
+**Lessons Learned**:
+- Not having types can make interpreting and reading other people's packages challenging
+- Don't trust other people's code without scrutinizing it first
+- Be careful to format code in a way that makes parenthesis clear
 
 ## Tutorials:
 - https://docs.racket-lang.org/pkg/getting-started.html
@@ -119,11 +124,43 @@
 
 <summary> Idea: Based on console output of thread logs it seems that <code>intensive watcher</code> threads are the ones running instead of the <code>robust watchers</code> that I was hoping for. It's possible that if robust watchers are running instead of intensive watchers then I will get the behavior I want. I wonder if there is a bug in the implementation of <code>watch</code> procedure </summary>
 
->Outcome: When I tried to explore why intensive watcher threads are running instead of robust watchers,...
+>Outcome: When I tried to explore why intensive watcher threads are running instead of robust watchers, I noticed in this line of code https://github.com/zyrolasting/file-watchers/blob/master/main.rkt#L55 it may be creating more watchers than expected. I'm struggling to find where `thread-maker` is defined though. Once I can find the definition of `thread-maker` I think I can figure out what's going on. It would be way more helpful if people use prefix to make clear import calls.
+
+</details>
+
+<details>
+
+<summary> Idea: Based on how watch has default option for <code>thread-maker</code>, it's possible that using their suggested-approach with apathetic watch will work </summary>
+
+>Outcome: When swapped to use `apathetic-watch`, the same result still happened with `intensive-watch` printing out its attempt to monitor the file system and running the command 3 times, I might want to examine CLI usage of `file-watchers` directly and see how robust and intensive differs
+
+</details>
+
+<details>
+
+<summary> Idea: Because my program's call of <code>file-watchers</code> is having issues with calling <code>robust-watch</code>, it's possible that the preinstalled version of <code>file-watch</code> that I have is outdated, so that could be causing it to always call <code>intensive-watch</code> </summary>
+
+>Outcome: When I searched the user directory for racket packages in `.local/share/racket/8.3/pkgs/file-watchers`, I found that it had a matching version to the code I was reading, I'm not sure why my library call to `watch` is behaving like `intensive-watch` is the default behavior
+
+</details>
+
+<details>
+
+<summary> Idea: Since my CLI app's library call to <code>file-watcher</code> is having issues, it's possible that using <code>file-watcher</code> own CLI could have the correct behavior, if its own CLI has a different behavior from what I'm seeing, then I can debug from there how my CLI code differs from theirs </summary>
+
+>Outcome: When I execute the command `raco file-watchers -m robust` and edit the `main.rkt` file to trigger file-change notification, the console prints out that the `robust-watcher` detected the change once and prints out once as expected. When I execute the command `raco file-watchers -m intensive` I noticed `intensive-watcher` threads would detect the change then print out 3 times about what it's doing upon editing `main.rkt`. The intensive watcher behavior looks exactly like the problem I'm facing in my CLI code's library call to `watch` while the `robust-watcher` option looks like what I want. I probably have to experiment with copy pasting `file-watcher` CLI code exactly and working from there
+
+</details>
+
+<details>
+
+<summary> Idea: Based on the fact that <code>file-watchers</code> CLI code can correctly invoke <code>robust-watcher</code>, it's possible that something is wrong with the code I copied from <code>raco-watcher</code> and <code>file-watcher</code> needs the call to <code>watch</code> to be a specific way </summary>
+
+>Outcome: When I ported over the `file-watcher` CLI code, I still had the same problem with `intensive-watch` kicking off. However, during closely examining the code, I saw that the parenthesis were not closed around the lambda method to isolate the system call. It was still valid parenthesis closing to the Racket compiler but for the logic I was trying to encapsulate it was invalid. Switching from `(thread-wait (fw:watch exists (lambda (lst) (sys:system (cmd)) displayln fw:robust-watch)))` to `(thread-wait (fw:watch exists (lambda (lst) (sys:system (cmd))) displayln fw:robust-watch))` allowed the code to work properly. The original line of code with the incorrect closing parenthesis actually came from the writer of `raco-watch` and me not identifying the closing parenthesis issue (which explains why using `raco-watch` package has the same error behavior). Lesson to self, scrutinize other people's packages because it's possible to get weird behaviors with even code that passes compiler check. It's also probably super important to format the code to make parenthesis easier to check and verify. One liners with lot of parenthesis can be hard to verify its correctness.
 
 </details>
 
 **Answer**
-: TBD
+: The reason for the behavior is due to the parenthesis not correctly encapsulating around `(lambda (lst) (system (cmd))` section. It's supposed to be `(lambda (lst) (system (cmd)))`
 
 ---
