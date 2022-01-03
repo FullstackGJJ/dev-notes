@@ -8,7 +8,7 @@
 - Racket Lang - 0
 - Scientific solution exploration - 0
 
-**Relevant skills before**:
+**Relevant skills after**:
 - Racket Lang - 1
 - Scientific solution exploration - 3
 

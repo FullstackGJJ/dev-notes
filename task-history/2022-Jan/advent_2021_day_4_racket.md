@@ -1,27 +1,28 @@
 # For advent of code 2021 day 4 using racket lang for the first time
 
-**Problem**: Using racket and scientific expert driven design, develop a library/package that can meet the requirements of this bingo board calculation
+**Problem**: Using racket and scientific expert driven design, develop a library/package that can meet the requirements of this bingo board game
 
 **Solution**: TBD
 
 **Relevant skills before**:
-- Racket Lang - 0
+- Racket Lang - 1
 - Scientific expert driven design - 3
 
-**Relevant skills before**:
+**Relevant skills after**:
 - Racket Lang - TBD
 - Scientific expert driven design - 3
 
-Tutorials:
+**Lessons Learned**:
+-
+
+## Tutorials:
 - https://docs.racket-lang.org/pkg/getting-started.html
 
-How-to's:
-- 
+## How-to's:
 
-Explanations:
-- 
+## Explanations:
 
-References:
+## References:
 - https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
 
 ## Thought Process:
