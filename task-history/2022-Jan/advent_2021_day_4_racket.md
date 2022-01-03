@@ -29,23 +29,19 @@
 ---
 
 **Question**
-: Does there exist a way to run all tests in a directory without specifying file name?
+: What are the domain experts when it comes to this game?
 
-**Hypothesis**
-: Based on this documentation (https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html) I would expect the answer to be yes because the documentation says that it will by default recursively go through all the possible directories. I will try the command `raco test .` and raco test finding all the .rkt test modules should happen and the results should be reported
+**Research**:
 
-**Observation**
-: When I tried the command `raco test.` the tests all ran as expected. This greatly enhances the development experience compared to what I thought of before where you have to specify the specific .rkt file whenever calling the `raco test` command and that is a good thing.
+<details>
 
----
+<summary> Idea: Based on the idea that this game is about determining if a board is won, it's very likely that a very important domain expert that needs to exist is an expert in bingo, an expert who can determine a winning board based on numbers called. The expert will very likely also have to be responsible for returning back a correct bingo board based on the number that has to be shown to be called </summary>
 
-**Question**
-: 
+>Outcome: When (ABC action was performed), (certain result happened), (optional analysis)
 
-**Hypothesis**
-: 
+</details>
 
-**Observation**
-:
+**Answer**
+: Answer
 
 ---
