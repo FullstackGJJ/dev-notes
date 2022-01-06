@@ -2,36 +2,9 @@
 
 **Problem**: Racket lang eco system currently does not have a polling file watcher that is crucial for people who use docker containers as development environments but still want to have tests to auto re-run
 
-**Solution**: Fully working new package named raco-watcher that is a polling based file watcher (https://github.com/FullstackGJJ/raco-watcher)
-
 **Relevant skills before**:
 - Racket Lang - 0
 - Scientific solution exploration - 0
-
-**Relevant skills after**:
-- Racket Lang - 1
-- Scientific solution exploration - 3
-
-**Lessons Learned**:
-- Not having types can make interpreting and reading other people's packages challenging
-- Don't trust other people's code without scrutinizing it first
-- Be careful to format code in a way that makes parenthesis clear
-
-## Tutorials:
-- https://docs.racket-lang.org/pkg/getting-started.html
-
-## How-to's:
-
-## Explanations:
-
-## References:
-- https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
-- https://github.com/dannypsnl/raco-watch
-- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt
-- https://github.com/zyrolasting/file-watchers/blob/master/robust-watch.rkt
-- https://docs.racket-lang.org/file-watchers/index.html#%28def._%28%28lib._file-watchers%2Fmain..rkt%29._robust-watch%29%29
-- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt#L60
-- https://docs.racket-lang.org/raco/exe.html
 
 ## Thought Process:
 ---
@@ -164,3 +137,30 @@
 : The reason for the behavior is due to the parenthesis not correctly encapsulating around `(lambda (lst) (system (cmd))` section. It's supposed to be `(lambda (lst) (system (cmd)))`
 
 ---
+
+**Solution**: Fully working new package named raco-watcher that is a polling based file watcher (https://github.com/FullstackGJJ/raco-watcher)
+
+**Relevant skills after**:
+- Racket Lang - 1
+- Scientific solution exploration - 3
+
+**Lessons Learned**:
+- Not having types can make interpreting and reading other people's packages challenging
+- Don't trust other people's code without scrutinizing it first
+- Be careful to format code in a way that makes parenthesis clear
+
+## Tutorials:
+- https://docs.racket-lang.org/pkg/getting-started.html
+
+## How-to's:
+
+## Explanations:
+
+## References:
+- https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
+- https://github.com/dannypsnl/raco-watch
+- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt
+- https://github.com/zyrolasting/file-watchers/blob/master/robust-watch.rkt
+- https://docs.racket-lang.org/file-watchers/index.html#%28def._%28%28lib._file-watchers%2Fmain..rkt%29._robust-watch%29%29
+- https://github.com/zyrolasting/file-watchers/blob/master/cli.rkt#L60
+- https://docs.racket-lang.org/raco/exe.html
