@@ -17,12 +17,15 @@
 
 ## Tutorials:
 - https://docs.racket-lang.org/pkg/getting-started.html
+- https://docs.racket-lang.org/quick/index.html#%28part._.Modules%29
+- https://docs.racket-lang.org/guide/intro.html
 
 ## How-to's:
 
 ## Explanations:
 
 ## References:
+- https://adventofcode.com/2021/day/4
 - https://download.racket-lang.org/releases/6.0.1/doc/raco/test.html
 
 ## Thought Process:
