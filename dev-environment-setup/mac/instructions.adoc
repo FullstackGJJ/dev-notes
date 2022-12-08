@@ -6,6 +6,8 @@ Copy over .tmux.conf to ~/.tmux.conf with `cp .tmux.conf ~/.tmux.conf`
 
 Install plugins with the command `nvim --headless +PlugInstall +qall >> /dev/null`
 
+Install ripgrep with command `brew install ripgrep`
+
 Make sure the environment variable for tmux plugin manager is set `EXPORT TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins`
 
 Install oh-my-zsh with `curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh || true`
