@@ -148,13 +148,13 @@ lua << EOF
   }
 EOF
 
-" Using Lua telescope functions
+" Using Lua telescope functions "
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-" LSP config (the mappings used in the default file don't quite work right)
+" LSP config (the mappings used in the default file don't quite work right) "
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -164,7 +164,7 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <S-Up> <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> <S-Down> <cmd>lua vim.diagnostic.goto_next()<CR>
 
-" auto-format
+" auto-format "
 autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 
 :syntax enable 
@@ -182,7 +182,7 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 :set winminheight=1
 :set winheight=55
 " :colorscheme peachpuff " for solarized light
-:colorscheme desert " for solarized dark
+:colorscheme desert " for solarized dark "
 
 call setreg('z',':set nonumber:set norelativenumber','c')
 call setreg('x',':set number:set relativenumber','c')

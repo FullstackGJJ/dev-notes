@@ -12,3 +12,7 @@ Install oh-my-zsh with `curl -L https://github.com/robbyrussell/oh-my-zsh/raw/ma
 
 Install Tmux Plugin Manager `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 Install tmux plugins `~/.tmux/plugins/tpm/bin/install_plugins`
+
+For NodeJS development
+Install typescript-language-server with the command 
+`npm install -g typescript-language-server typescript`
