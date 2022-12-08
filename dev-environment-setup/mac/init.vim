@@ -34,6 +34,14 @@ Plug 'godlygeek/tabular'
 " Maintain nvim layout session
 Plug 'tpope/vim-obsession'
 
+" Configurations for nvim language server protocol
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+
+""""""""NodeJS development""""""""
+Plug 'David-Kunz/cmp-npm'
+""""""""""""""""""""""""""""""""""
+
 call plug#end()
 
 set completeopt=menu,menuone,noselect
@@ -66,6 +74,7 @@ lua <<EOF
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip' }, -- For luasnip users.
+      { name = 'npm', keyword_length = 4 },
     }, {
       { name = 'buffer' },
     })
@@ -131,11 +140,32 @@ lua << EOF
     }
 EOF
 
+lua << EOF
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  require('lspconfig').tsserver.setup {
+    capabilities = capabilities
+  }
+EOF
+
 " Using Lua telescope functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <S-Up> <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> <S-Down> <cmd>lua vim.diagnostic.goto_next()<CR>
+
+" auto-format
+autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 
 :syntax enable 
 :syntax on
