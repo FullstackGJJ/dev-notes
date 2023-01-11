@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux='tmux -u'
+alias superclear='clear && printf "\e[3J"'
 
 # For ruby rbenv stuff to work properly
 export PATH="$HOME/.rbenv/bin:$PATH"
