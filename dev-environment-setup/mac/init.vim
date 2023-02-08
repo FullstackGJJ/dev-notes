@@ -7,6 +7,9 @@ Plug 'tpope/vim-vinegar'
 " Ascii Doc tools
 Plug 'habamax/vim-asciidoctor'
 
+" Editor Config plugin
+Plug 'editorconfig/editorconfig-vim'
+
 " Neorg tools
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-neorg/neorg'
@@ -181,6 +184,7 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 :set winwidth=100
 :set winminheight=1
 :set winheight=55
+:set shortmess-=S
 " :colorscheme peachpuff " for solarized light
 :colorscheme desert " for solarized dark "
 
@@ -197,7 +201,7 @@ noremap <Right> l
 noremap <Left> h
 noremap <Up> k
 noremap <Down> j
-noremap <leader>t :tabnew%<CR>
+noremap <leader>t vlT
 map <Space> <Plug>(easymotion-s)
 map <leader><Space> <Plug>(easymotion-prefix)
 vnoremap // y/<C-R>"<CR>
