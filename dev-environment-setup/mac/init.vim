@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " VIM quality of life stuff
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-vinegar'
+Plug 'Sangdol/mintabline.vim'
 
 " Ascii Doc tools
 Plug 'habamax/vim-asciidoctor'
@@ -29,7 +30,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " Status line functionality
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " Aligning text
 Plug 'godlygeek/tabular'
@@ -224,6 +225,10 @@ function! FocusRange() range
     :execute ":" . belowLine . "," . line('$') . "fold"
 endfunction
 
+function! SortWordsInLine()
+    :call setline('.', join(sort(split(getline('.'), ' ')), " "))
+endfunction
+
 function! VimConfig()
     :tabnew $MYVIMRC
 endfunction
@@ -234,4 +239,8 @@ endfunction
 
 function! ZshConfig()
     :tabnew ~/.zshrc
+endfunction
+
+function! JQ()
+    :%!jq '.'
 endfunction
