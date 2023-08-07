@@ -1,0 +1,5 @@
+[mono]>[0][255][0]
+fn [mono]>[255][255][255]
+[spectrum_edge]>[spd5]
+fn [mono_edge]>[255][255][255]
+

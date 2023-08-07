@@ -1,0 +1,9 @@
+[esc]>[tilde]
+[caps]>[lctrl]
+[lctrl]>[esc][t&h250][lctrl]
+[mspc]>[fntog]
+[fnshf]>[rwin]
+[rctrl]>[esc][t&h250][rctrl]
+fn [mspc]>[fntog]
+fn [fnshf]>[rwin]
+
