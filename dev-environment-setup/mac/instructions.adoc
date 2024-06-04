@@ -1,5 +1,8 @@
 Install neovim with `brew install neovim`
 
+Install Vim Plug into directory `curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+
 Copy over init.vim to ~/.config/nvim/init.vim with `cp init.vim ~/.config/nvim/init.vim`
 Copy over .zshrc to ~/.zshrc with `cp .zshrc ~/.zshrc`
 Copy over .tmux.conf to ~/.tmux.conf with `cp .tmux.conf ~/.tmux.conf`

@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim')
 
 " VIM quality of life stuff
 Plug 'easymotion/vim-easymotion'
