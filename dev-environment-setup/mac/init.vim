@@ -8,6 +8,16 @@ Plug 'Sangdol/mintabline.vim'
 " Ascii Doc tools
 Plug 'habamax/vim-asciidoctor'
 
+" Useful lisp plugins
+Plug 'luochen1990/rainbow'
+
+" Conjure server plugin
+Plug 'Olical/conjure'
+
+" S-expression plugins
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+
 " Editor Config plugin
 Plug 'editorconfig/editorconfig-vim'
 
@@ -39,7 +49,8 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-obsession'
 
 " Configurations for nvim language server protocol
-Plug 'neovim/nvim-lspconfig'
+Plug 'FullstackGJJ/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 """"""""NodeJS development""""""""
@@ -51,6 +62,14 @@ call plug#end()
 set completeopt=menu,menuone,noselect
 
 let g:netrw_banner = 1
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let lightcolors =  ['lightblue', 'lightyellow', 'red', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
+let darkcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+let g:rainbow_conf = {'ctermfgs': lightcolors}
+
+" Setting scheme client with chicken scheme
+let g:conjure#client#scheme#stdio#command = "csi -quiet -:c"
+let g:conjure#client#scheme#stdio#prompt_pattern = "\n-#;%d-> "
 
 lua <<EOF
 
@@ -121,33 +140,36 @@ lua << END
 END
 
 lua << EOF
-    require('neorg').setup {
-        load = {
-            ['core.defaults'] = {},
-            ['core.norg.dirman'] = {
-                config = {
-                    workspaces = {
-                        coding = '~/neorg-coding',
-                        gtd = '~/neorg-gtd'
-                    }
-                }
-            },
-            ['core.norg.concealer'] = {},
-            ['core.export'] = {},
-            ['core.gtd.base'] = {
-                config = {
-                    workspace = 'gtd'
-                }
-            },
-            ['core.norg.manoeuvre'] = {}
-        }
-    }
+    -- require('neorg').setup {
+    --     load = {
+    --         ['core.defaults'] = {},
+    --         ['core.norg.dirman'] = {
+    --             config = {
+    --                 workspaces = {
+    --                     coding = '~/neorg-coding',
+    --                     gtd = '~/neorg-gtd'
+    --                 }
+    --             }
+    --         },
+    --         ['core.norg.concealer'] = {},
+    --         ['core.export'] = {},
+    --         ['core.gtd.base'] = {
+    --             config = {
+    --                 workspace = 'gtd'
+    --             }
+    --         },
+    --         ['core.norg.manoeuvre'] = {}
+    --     }
+    -- }
 EOF
 
 lua << EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig').tsserver.setup {
+    capabilities = capabilities
+  }
+  require('lspconfig').chicken_langserver.setup {
     capabilities = capabilities
   }
 EOF
@@ -186,11 +208,12 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 :set winminheight=1
 :set winheight=55
 :set shortmess-=S
-" :colorscheme peachpuff " for solarized light
-:colorscheme desert " for solarized dark "
+:colorscheme peachpuff " for solarized light
+" :colorscheme desert " for solarized dark "
 
 call setreg('z',':set nonumber:set norelativenumber','c')
 call setreg('x',':set number:set relativenumber','c')
+call setreg('i','$ik$','c') "for scheme coding convenience of unwrapping grouped up braces
 inoremap <C-H> <Left>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
