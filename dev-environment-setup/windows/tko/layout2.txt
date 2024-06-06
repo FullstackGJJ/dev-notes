@@ -6,4 +6,3 @@
 [rctrl]>[esc][t&h250][rctrl]
 fn [mspc]>[fntog]
 fn [fnshf]>[rwin]
-
