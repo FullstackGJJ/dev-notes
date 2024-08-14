@@ -193,6 +193,7 @@ nnoremap <silent> <S-Down> <cmd>lua vim.diagnostic.goto_next()<CR>
 " auto-format "
 autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 
+:set autoread
 :syntax enable 
 :syntax on
 :filetype plugin indent on
@@ -210,6 +211,7 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 :set shortmess-=S
 :colorscheme peachpuff " for solarized light
 " :colorscheme desert " for solarized dark "
+ nnoremap <F5> :checktime<CR>
 
 call setreg('z',':set nonumber:set norelativenumber','c')
 call setreg('x',':set number:set relativenumber','c')
