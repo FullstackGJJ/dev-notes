@@ -1,0 +1,3 @@
+set incsearch
+set hlsearch
+nmap gi :action GotoImplementation<CR>
