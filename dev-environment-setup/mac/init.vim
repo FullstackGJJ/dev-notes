@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim')
+call plug#begin('~/.config/nvim/plugged')
 
 " VIM quality of life stuff
 Plug 'easymotion/vim-easymotion'
@@ -41,6 +41,7 @@ Plug 'nvim-lua/plenary.nvim'
 " Status line functionality
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Aligning text
 Plug 'godlygeek/tabular'
@@ -49,8 +50,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-obsession'
 
 " Configurations for nvim language server protocol
-Plug 'FullstackGJJ/nvim-lspconfig'
-"Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 """"""""NodeJS development""""""""
@@ -193,6 +193,9 @@ nnoremap <silent> <S-Down> <cmd>lua vim.diagnostic.goto_next()<CR>
 " auto-format "
 autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 
+" To allow Taboo to work with with Obsession "
+:set sessionoptions+=tabpages,globals
+:au CursorHold,CursorHoldI * checktime
 :set autoread
 :syntax enable 
 :syntax on
@@ -213,9 +216,14 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 " :colorscheme desert " for solarized dark "
  nnoremap <F5> :checktime<CR>
 
-call setreg('z',':set nonumber:set norelativenumber','c')
-call setreg('x',':set number:set relativenumber','c')
-call setreg('i','$ik$','c') "for scheme coding convenience of unwrapping grouped up braces
+call setreg('z',':set nonumber
+:set norelativenumber
+','c')
+call setreg('x',':set number
+:set relativenumber
+','c')
+call setreg('i','$i
+k$','c') "for scheme coding convenience of unwrapping grouped up braces
 inoremap <C-H> <Left>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
