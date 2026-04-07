@@ -40,7 +40,8 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 == Resources:
 [unordered]
-tutorial:: ...
+tutorial::
+* https://developer.apple.com/tutorials/develop-in-swift/#welcome
 how-to:: ...
 explanation:: ...
 reference:: ...
@@ -50,5 +51,10 @@ reference:: ...
 
 '''
 
+*Accomplished*: I have no reference to take a guess on the project since I have no iOS experience. I input into Claude Code the prompt "I want to code an iOS checklist app" and then also prompted for SwiftUI framework and all the possible features Claude Code inferred I might want. I got back 9 swift files and a plist file that gives me a rough idea how iOS apps written in Swift are structured. It's very clear that the structure takes inspiration from a common ancestor to React or .NET MVC projects. I double check with https://developer.apple.com/tutorials/develop-in-swift/#welcome and https://developer.apple.com/documentation/ so I can understand the syntactic output that Claude gave me. After analyzing, it is very clear that the underlying data modeling and data structures that Claude Code gave me does not have enough conceptualization to support the user story.
+
+*What's next*: Design data modeling, data structure, and expertise breakdown to make it possible to fulfill the user stories
+
+Tue Apr  7 14:31:53 EDT 2026
 
 '''
