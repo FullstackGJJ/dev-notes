@@ -1,0 +1,117 @@
+= Build iOS checklist app that satisfies all of my requirements
+Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
+
+== Description
+*Context*: After experimenting and paying for various checklist apps on iOS store, I encountered various combination of shortcomings with each app along with agreeing with various apps respective reviews that highlight their known shortcomings.
+
+*Task*: Build iOS checklist app that satisfies all of my requirements
+
+*User Story*: As a user with Hank's preferences, 
+- I want a simple interface to add new task on checklist, so that I can quickly add new items
+- I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
+- I want a reoccuring backlog of tasks with tags, so that I can place them onto a list without needing to retype
+- I want a one off backlog of tasks, so I can have a jottery backlog of tasks to be worked on later
+- I want each task to support having a detailed notes option, so I can place more specific instruction or information on the task if needed
+- I want a sidebar to access pages, so that I can organize groups of checklists
+- I want a re-arrange mode, so that the touch experience doesn't clash from movement mode being on all the time
+- I want a check/uncheck all option, so that I can reset a checklist when needed
+- I want an optional display mode to represent a task is in progress, so that collaborators can see what is in progress
+
+*Acceptance Criteria*: Definition of reaching the end (based on https://cucumber.io/docs/terms/user-story#acceptance-criteria-using-cucumber-language)
+
+*Solution/Result*: In progress
+
+*Implication*: Where else can I browse through the community and get feedback to create something better?
+
+== Engineer Concerns:
+*Prior relevant experience*:
+
+*Doing for first time*:
+
+*Lessons Learned*:
+
+*Engineering constraints*:
+
+*Complexity factors*:
+- How to prove work is done?: How can you demonstrate work was done in a clear black and white manner? If this is complex chances are your work is going to be complex because of this bottleneck
+- Domain Changes?: Do you have to change the assumptions the codebase's domain has? What are they if you do?
+- Event Changes?: Do you have to change the events that happen in the overall ecosystem? What are they if you do?
+- System Changes?: Do you have to change the actual system that exist in the ecosystem? What changes if you do?
+
+== Resources:
+* |tutorial|: ...
+* |how-to|: ...
+* |explanation|: ...
+* |reference|: ...
+
+`vim type "!!date<CR>" for timestamp`
+
+== Engineering Phases:
+* *Discovery*: Exploring the problem, researching relevant domain/subject matter space, understanding alternatives, ideal target audience if any, definition of quality
+* *Shaping*: Working with relevant parties to write out use cases, define ideal experience and acceptable pragmatic to implement experience. What is definition of done.
+* *Design*: Define clear product requirements including technical domain detail, craft final designs, create work plan, estimate timeline, define learning/test plan
+* *Build*: Execute, test
+* *Launch*: Monitor, follow up research
+
+== Detailed Applied Engineering Phases:
+* Example:
+* *Discovery*: XYZ was found out during Discovery
+* *Shaping*: Collaboration with various teams led to XYZ to be accepted
+
+== Thought Process:
+
+'''
+
+*Lead*:
+
+*Action*:
+
+'''
+
+*Current understanding*:
+
+'''
+
+*Update*:
+
+'''
+
+*Discovery*:
+
+*Implication*:
+
+'''
+
+*Accomplished*: 
+
+*What's next*: 
+
+'''
+
+*Drawn System reference diagram based on my understanding*
+
+'''
+
+*Event model and Decision-Making Flowchart for before work*:
+
+*How to show problem of not having work done*:
+
+'''
+
+*Event model and Decision-Making Flowchart for after work*:
+
+*How to test to prove work was a success*:
+
+*How to test to prove existing functionality isn't broken?*
+
+'''
+
+*Question*: 
+
+- Idea: Based on (info), it's possible (that XYZ assertion is correct), (optional explanation)
+
+  Outcome: When (ABC action was performed), (certain result happened), (optional analysis)
+
+*Answer*: 
+
+'''
