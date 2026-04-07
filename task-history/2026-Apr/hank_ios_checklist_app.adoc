@@ -8,8 +8,8 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 .*User Story*: As a user with Hank's preferences,
 * I want a simple interface to add new task on checklist, so that I can quickly add new items
-* I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
 * I want a reoccuring backlog of tasks with tags, so that I can place them onto a list without needing to retype
+* I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
 * I want a one off backlog of tasks, so I can have a jottery backlog of tasks to be worked on later
 * I want each task to support having a detailed notes option, so I can place more specific instruction or information on the task if needed
 * I want a sidebar to access pages, so that I can organize groups of checklists
@@ -18,6 +18,21 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 * I want an optional display mode to represent a task is in progress, so that collaborators can see what is in progress
 
 *Acceptance Criteria*: Definition of reaching the end (based on https://cucumber.io/docs/terms/user-story#acceptance-criteria-using-cucumber-language)
+
+[source,gherkin]
+----
+Feature: Simple interface to add new task on checklist
+  Scenario: Adding to checklist
+    Given I have an empty or populated checklist
+    When I click on the plus sign
+    Then I get a new entry item that I can type out
+----
+
+[source,gherkin]
+----
+Feature: Simple interface to batch select populate a checklist from a backlog
+----
+
 
 *Solution/Result*: In progress
 
