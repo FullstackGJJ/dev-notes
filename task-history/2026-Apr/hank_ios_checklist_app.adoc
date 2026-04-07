@@ -59,6 +59,28 @@ Feature: One off backlog of items
     Then I should see all my one off backlog items
 ----
 
+[source,gherkin]
+----
+Feature: Each item to support having a detailed notes option
+  Scenario: Adding note
+    Given I have a checklist item
+    When I swipe to unveil note editing button
+    And I click on note button
+    Then I see a note screen to fill in notes to the item
+    When I click save
+    And I look at note again
+    Then I see that the note has been saved
+----
+
+[source,gherkin]
+----
+Feature: Sidebar to access pages
+  Scenario: Accessing pages
+    Given I am on the main screen
+    When 
+    Then 
+----
+
 *Solution/Result*: In progress
 
 *Implication*: Where else can I browse through the community and get feedback to create something better?
