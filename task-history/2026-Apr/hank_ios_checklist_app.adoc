@@ -6,8 +6,7 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 *Task*: Build iOS checklist app that satisfies all of my requirements
 
-*User Story*: As a user with Hank's preferences,
-
+.*User Story*: As a user with Hank's preferences,
 * I want a simple interface to add new task on checklist, so that I can quickly add new items
 * I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
 * I want a reoccuring backlog of tasks with tags, so that I can place them onto a list without needing to retype
@@ -25,18 +24,15 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 *Implication*: Where else can I browse through the community and get feedback to create something better?
 
 == Engineer Concerns:
-*Prior relevant experience*:
-- Lots of React frontend experience 0 iOS experience
+*Prior relevant experience*: Lots of React frontend experience 0 iOS experience
 
-*Doing for first time*:
-* Everything involved should have been solved engineering problems
+*Doing for first time*: Everything involved should have been solved engineering problems
 
 *Lessons Learned*:
 
 *Engineering constraints*:
 
-*Complexity factors*:
-
+.*Complexity factors*:
 * How to prove work is done: Manually interact with the app and ensure it passes standards of good quality
 * Domain Changes: Create concepts of checklist interaction and necessary features of interaction
 * Event Changes: None
