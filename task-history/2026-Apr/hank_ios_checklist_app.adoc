@@ -6,7 +6,8 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 *Task*: Build iOS checklist app that satisfies all of my requirements
 
-*User Story*: As a user with Hank's preferences, 
+*User Story*: As a user with Hank's preferences,
+
 * I want a simple interface to add new task on checklist, so that I can quickly add new items
 * I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
 * I want a reoccuring backlog of tasks with tags, so that I can place them onto a list without needing to retype
@@ -35,73 +36,23 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 *Engineering constraints*:
 
 *Complexity factors*:
+
 * How to prove work is done: Manually interact with the app and ensure it passes standards of good quality
 * Domain Changes: Create concepts of checklist interaction and necessary features of interaction
 * Event Changes: None
 * System Changes: None
 
 == Resources:
-* |tutorial|: ...
-* |how-to|: ...
-* |explanation|: ...
-* |reference|: ...
+[unordered]
+tutorial:: ...
+how-to:: ...
+explanation:: ...
+reference:: ...
 
-`vim type "!!date<CR>" for timestamp`
 
 == Thought Process:
 
 '''
 
-*Lead*:
-
-*Action*:
-
-'''
-
-*Current understanding*:
-
-'''
-
-*Update*:
-
-'''
-
-*Discovery*:
-
-*Implication*:
-
-'''
-
-*Accomplished*: 
-
-*What's next*: 
-
-'''
-
-*Drawn System reference diagram based on my understanding*
-
-'''
-
-*Event model and Decision-Making Flowchart for before work*:
-
-*How to show problem of not having work done*:
-
-'''
-
-*Event model and Decision-Making Flowchart for after work*:
-
-*How to test to prove work was a success*:
-
-*How to test to prove existing functionality isn't broken?*
-
-'''
-
-*Question*: 
-
-- Idea: Based on (info), it's possible (that XYZ assertion is correct), (optional explanation)
-
-  Outcome: When (ABC action was performed), (certain result happened), (optional analysis)
-
-*Answer*: 
 
 '''
