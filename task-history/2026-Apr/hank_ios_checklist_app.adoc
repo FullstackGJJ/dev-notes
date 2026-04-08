@@ -8,7 +8,7 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 .*User Story*: As a user with Hank's preferences,
 * I want a simple interface to add new item on checklist, so that I can quickly add new items
-* I want a reoccuring backlog of items with tags, so that I can place them onto a list without needing to retype
+* I want a reoccuring backlog of items with tags, so that I can place items onto a list without needing to retype
 * I want a simple interface to batch select populate a checklist from a backlog, so that I can reduce typing
 * I want a one off backlog of items, so I can have a jottery backlog of items to be worked on later
 * I want each item to support having a detailed notes option, so I can place more specific instruction or information on the item if needed
@@ -21,7 +21,11 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 
 [source,gherkin]
 ----
-Feature: Simple interface to add new item on checklist
+Feature: Checklist add item button
+  In order to quickly add new items
+  As a user
+  I want a simple interface to add new item on checklist
+
   Scenario: Adding to checklist
     Given I have an empty or populated checklist
     When I add to the checklist
@@ -30,7 +34,11 @@ Feature: Simple interface to add new item on checklist
 
 [source,gherkin]
 ----
-Feature: Reoccuring backlog of items with tags
+Feature: Reoccuring backlog page
+  In order to place items onto a list without needing to retype
+  As a user
+  I want a reoccuring backlog of items with tags
+
   Scenario: Viewing and editing reoccuring backlog
     Given I have a reoccuring backlog of tagged items
     When I select tags
@@ -39,7 +47,11 @@ Feature: Reoccuring backlog of items with tags
 
 [source,gherkin]
 ----
-Feature: Simple interface to batch select populate a checklist from a backlog
+Feature: Batch selection
+  In order to reduce typing
+  As a user
+  I want a simple interface to batch select populate a checklist from a backlog
+
   Scenario: Adding to checklist from batch selecting items from backlog
     Given I have a checklist
     When I batch add to checklist
@@ -48,7 +60,11 @@ Feature: Simple interface to batch select populate a checklist from a backlog
 
 [source,gherkin]
 ----
-Feature: One off backlog of items
+Feature: One off backlog page
+  In order to have a jottery backlog of items to be worked on later
+  As a user
+  I want a one off backlog of items
+
   Scenario: Viewing and editing one off backlog
     Given I have a one off backlog of items
     When I go to one off backlog screen
@@ -57,7 +73,11 @@ Feature: One off backlog of items
 
 [source,gherkin]
 ----
-Feature: Each item to support having a detailed notes option
+Feature: Item notes
+  In order to place more specific instruction or information on the item if needed
+  As a user
+  I want each item to support having a detailed notes option
+
   Scenario: Adding note
     Given I have a checklist item
     When I edit and save note on the item
@@ -67,6 +87,10 @@ Feature: Each item to support having a detailed notes option
 [source,gherkin]
 ----
 Feature: Sidebar to access pages
+  In order to organize groups of checklists
+  As a user
+  I want a sidebar to access pages
+
   Scenario: Accessing pages
     Given I am on the main screen
     When I go to a different page
@@ -81,6 +105,10 @@ Feature: Sidebar to access pages
 [source,gherkin]
 ----
 Feature: Re-arrange mode
+  In order for the touch experience to not clash from movement mode being on all the time
+  As a user
+  I want a re-arrange mode
+
   Scenario: Re-arranging items in a checklist
     Given I am on a checklist with multiple items
     When I click on re-arrange
@@ -90,6 +118,10 @@ Feature: Re-arrange mode
 [source,gherkin]
 ----
 Feature: Check/uncheck all option
+  In order to reset a checklist when needed
+  As a user
+  I want a check/uncheck all option
+
   Scenario: Reseting a checklist
     Given I am on a checklist with multiple items
     When I click on check/uncheck all
@@ -99,6 +131,10 @@ Feature: Check/uncheck all option
 [source,gherkin]
 ----
 Feature: Optional display mode to represent a item is in progress
+  In order to see what is in progress
+  As a user
+  I want an optional display mode to represent a item is in progress
+
   Scenario: Marking an item that it is in progress
     Given I am on a checklist with atleast 1 item
     When I mark item as in progress
