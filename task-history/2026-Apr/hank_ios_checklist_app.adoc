@@ -150,7 +150,8 @@ Feature: In progress mark
 
 *Doing for first time*: Everything involved should have been solved engineering problems
 
-*Lessons Learned*:
+.*Lessons Learned*:
+* When I have a fleshed out set of user story and spec requirement that are good enough, I can then use that as reference to design appropriate data structures and data models to support all the conceptual operations needed. I can then also begin to identify domain/subject matter expertise and also system/framework domains and arrange project code most appropriately.
 
 *Engineering constraints*:
 
@@ -164,7 +165,7 @@ Feature: In progress mark
 [unordered]
 tutorial::
 * https://developer.apple.com/tutorials/develop-in-swift/#welcome
-how-to:: ...
+how-to::
 * https://cucumber.io/docs/bdd/better-gherkin
 explanation:: ...
 reference::
