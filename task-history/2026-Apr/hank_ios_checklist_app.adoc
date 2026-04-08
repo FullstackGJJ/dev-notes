@@ -189,3 +189,15 @@ Tue Apr  7 14:31:53 EDT 2026
 Tue Apr  7 21:59:39 EDT 2026
 
 '''
+
+.*Current understanding*:
+* Checklist are lists, add button adds to the list
+* Page holds a bunch of checklists
+* Batch selection identifies positions of item on a list to manipulate
+* Backlog page holds a bunch of items
+* Item contains note field
+* Item status can be unchecked, in progress, or checked
+
+Wed Apr  8 15:01:08 EDT 2026
+
+'''
