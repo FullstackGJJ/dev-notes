@@ -34,7 +34,7 @@ Feature: Checklist add item button
 
 [source,gherkin]
 ----
-Feature: Reoccuring backlog page
+Feature: Reoccuring backlog
   In order to place items onto a list without needing to retype
   As a user
   I want a reoccuring backlog of items with tags
@@ -60,7 +60,7 @@ Feature: Batch selection
 
 [source,gherkin]
 ----
-Feature: One off backlog page
+Feature: One off backlog
   In order to have a jottery backlog of items to be worked on later
   As a user
   I want a one off backlog of items
@@ -167,9 +167,11 @@ tutorial::
 * https://developer.apple.com/tutorials/develop-in-swift/#welcome
 how-to::
 * https://cucumber.io/docs/bdd/better-gherkin
-explanation:: ...
+explanation::
+* https://www.hackingwithswift.com/forums/swiftui/swiftdata-enum-no-exact-matches-in-call-to-instance-method-setvalue-error/26963
 reference::
 * https://developer.apple.com/documentation/
+* https://docs.swift.org/swift-book/documentation/the-swift-programming-language
 
 
 == Thought Process:
@@ -194,7 +196,8 @@ Tue Apr  7 21:59:39 EDT 2026
 * Checklist are lists, add button adds to the list
 * Page holds a bunch of checklists
 * Batch selection identifies positions of item on a list to manipulate
-* Backlog page holds a bunch of items
+* Backlog holds a bunch of items
+* A user can have as many backlogs as they want
 * Item contains note field
 * Item status can be unchecked, in progress, or checked
 
