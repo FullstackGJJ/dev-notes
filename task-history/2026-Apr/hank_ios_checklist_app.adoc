@@ -24,7 +24,7 @@ Hank Lin; thesolidarityengineer@gmail.com; 4-7-2026
 Feature: Simple interface to add new item on checklist
   Scenario: Adding to checklist
     Given I have an empty or populated checklist
-    When I click on the plus sign
+    When I add to the checklist
     Then I get a new entry item that I can type out
 ----
 
@@ -32,22 +32,18 @@ Feature: Simple interface to add new item on checklist
 ----
 Feature: Reoccuring backlog of items with tags
   Scenario: Viewing and editing reoccuring backlog
-    Given I have a reoccuring backlog of items
-    And I tag them
-    When I click select tags
-    Then I should see items that have the selected tags
+    Given I have a reoccuring backlog of tagged items
+    When I select tags
+    Then I should see only items that have the selected tags
 ----
 
 [source,gherkin]
 ----
 Feature: Simple interface to batch select populate a checklist from a backlog
   Scenario: Adding to checklist from batch selecting items from backlog
-    Given I have an empty or populated checklist
-    And backlog items
-    When I click on the batch plus sign
-    And I select multiple backlog items
-    And click add
-    Then I see the selected backlog items added to the checklist
+    Given I have a checklist
+    When I batch add to checklist
+    Then I see the backlog items with option to select for adding to checklist
 ----
 
 [source,gherkin]
@@ -64,11 +60,7 @@ Feature: One off backlog of items
 Feature: Each item to support having a detailed notes option
   Scenario: Adding note
     Given I have a checklist item
-    When I swipe to unveil note editing button
-    And I click on note button
-    Then I see a note screen to fill in notes to the item
-    When I click save
-    And I look at note again
+    When I edit and save note on the item
     Then I see that the note has been saved
 ----
 
@@ -77,12 +69,12 @@ Feature: Each item to support having a detailed notes option
 Feature: Sidebar to access pages
   Scenario: Accessing pages
     Given I am on the main screen
-    When I click on a different page
+    When I go to a different page
     Then I see a different page's set of checklists
 
   Scenario: Adding pages
     Given I am on the main screen
-    When I click on plus button to add a page
+    When I add a page
     Then I see a page added on the side bar
 ----
 
@@ -109,8 +101,7 @@ Feature: Check/uncheck all option
 Feature: Optional display mode to represent a item is in progress
   Scenario: Marking an item that it is in progress
     Given I am on a checklist with atleast 1 item
-    When I swipe right on the item
-    And click in progress button
+    When I mark item as in progress
     Then the item will display that it is in progress
 ----
 
