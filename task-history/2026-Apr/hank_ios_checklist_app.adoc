@@ -117,7 +117,7 @@ Feature: Re-arrange mode
 
 [source,gherkin]
 ----
-Feature: Check/uncheck all option
+Feature: Check/uncheck all
   In order to reset a checklist when needed
   As a user
   I want a check/uncheck all option
@@ -130,7 +130,7 @@ Feature: Check/uncheck all option
 
 [source,gherkin]
 ----
-Feature: Optional display mode to represent a item is in progress
+Feature: In progress mark
   In order to see what is in progress
   As a user
   I want an optional display mode to represent a item is in progress
