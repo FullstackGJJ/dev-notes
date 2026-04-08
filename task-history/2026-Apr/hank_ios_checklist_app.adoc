@@ -139,7 +139,8 @@ tutorial::
 * https://developer.apple.com/tutorials/develop-in-swift/#welcome
 how-to:: ...
 explanation:: ...
-reference:: ...
+reference::
+* https://developer.apple.com/documentation/
 
 
 == Thought Process:
