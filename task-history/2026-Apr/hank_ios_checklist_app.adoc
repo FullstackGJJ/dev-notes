@@ -154,3 +154,9 @@ reference::
 Tue Apr  7 14:31:53 EDT 2026
 
 '''
+
+*Current understanding*: When I have a fleshed out set of user story and spec requirement that are good enough, I can then use that as reference to design appropriate data structures and data models to support all the conceptual operations needed. I can then also begin to identify domain/subject matter expertise and also system/framework domains and arrange project code most appropriately.
+
+Tue Apr  7 21:59:39 EDT 2026
+
+'''
