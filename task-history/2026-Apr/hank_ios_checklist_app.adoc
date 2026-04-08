@@ -77,8 +77,41 @@ Feature: Each item to support having a detailed notes option
 Feature: Sidebar to access pages
   Scenario: Accessing pages
     Given I am on the main screen
-    When 
-    Then 
+    When I click on a different page
+    Then I see a different page's set of checklists
+
+  Scenario: Adding pages
+    Given I am on the main screen
+    When I click on plus button to add a page
+    Then I see a page added on the side bar
+----
+
+[source,gherkin]
+----
+Feature: Re-arrange mode
+  Scenario: Re-arranging items in a checklist
+    Given I am on a checklist with multiple items
+    When I click on re-arrange
+    Then I am able to re-arrange items on a checklist
+----
+
+[source,gherkin]
+----
+Feature: Check/uncheck all option
+  Scenario: Reseting a checklist
+    Given I am on a checklist with multiple items
+    When I click on check/uncheck all
+    Then all of the items in the checklist become checked/unchecked
+----
+
+[source,gherkin]
+----
+Feature: Optional display mode to represent a item is in progress
+  Scenario: Marking an item that it is in progress
+    Given I am on a checklist with atleast 1 item
+    When I swipe right on the item
+    And click in progress button
+    Then the item will display that it is in progress
 ----
 
 *Solution/Result*: In progress
