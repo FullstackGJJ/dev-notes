@@ -205,3 +205,11 @@ Tue Apr  7 21:59:39 EDT 2026
 Wed Apr  8 15:01:08 EDT 2026
 
 '''
+
+*Discovery*: It seems that Claude Code's output assumes a Model View Viewmodel structure and there is a debate in Apple's SwiftUI development community on whether that is Apple's philosophy for SwiftUI.
+
+*Implication*: I will have to dive deeper into SwiftUI learning to figure out the pros and cons and which direction to go and how much of Claude Code's output which assumes MVVM is salvagable for this app's codebase
+
+Thu Apr  9 11:10:02 EDT 2026
+
+'''
