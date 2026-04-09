@@ -172,6 +172,7 @@ explanation::
 reference::
 * https://developer.apple.com/documentation/
 * https://docs.swift.org/swift-book/documentation/the-swift-programming-language
+* https://developer.apple.com/documentation/swiftui/
 
 
 == Thought Process:
