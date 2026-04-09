@@ -173,6 +173,7 @@ reference::
 * https://developer.apple.com/documentation/
 * https://docs.swift.org/swift-book/documentation/the-swift-programming-language
 * https://developer.apple.com/documentation/swiftui/
+* https://developer.apple.com/documentation/swiftui/tabview#overview
 
 
 == Thought Process:
@@ -211,5 +212,11 @@ Wed Apr  8 15:01:08 EDT 2026
 *Implication*: I will have to dive deeper into SwiftUI learning to figure out the pros and cons and which direction to go and how much of Claude Code's output which assumes MVVM is salvagable for this app's codebase
 
 Thu Apr  9 11:10:02 EDT 2026
+
+'''
+
+*Discovery*: Claude Code didn't give correct output for TabView. It might have been out of date. I had to reference https://developer.apple.com/documentation/swiftui/tabview#overview to discover the way to do it that works
+
+*Implication*: I have to wonder how up to date is Claude Code output is
 
 '''
