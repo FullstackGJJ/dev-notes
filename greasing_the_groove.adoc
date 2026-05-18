@@ -1,0 +1,13 @@
+* Go through "How to Design Programs" book
+* Go through 76 leetcode questions written down
+* Go through Systems Design book
+* Write some libraries
+* Write some programs
+* Read "The Effective Engineer"
+* Read "The Staff Engineer's Path"
+* Do edabit.com problems
+* Do codecrafts.io problems
+* Go through TLA+ system checker stuff
+* Read "Extreme Programming"
+* Read "Modern Software Engineering"
+* Read "The Discipline of Organizing"
