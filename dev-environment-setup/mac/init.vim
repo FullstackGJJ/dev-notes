@@ -57,6 +57,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'David-Kunz/cmp-npm'
 """"""""""""""""""""""""""""""""""
 
+""""""""DotNet development""""""""
+Plug 'seblyng/roslyn.nvim'
+""""""""""""""""""""""""""""""""""
+
 call plug#end()
 
 set completeopt=menu,menuone,noselect
@@ -166,12 +170,21 @@ EOF
 lua << EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-  require('lspconfig').tsserver.setup {
+  vim.lsp.config("ts_ls", {
     capabilities = capabilities
-  }
-  require('lspconfig').chicken_langserver.setup {
+  })
+  vim.lsp.config("scheme_langserver", {
     capabilities = capabilities
-  }
+  })
+  vim.lsp.config("roslyn", {
+    capabilities = capabilities
+  })
+  vim.lsp.enable('basedpyright')
+EOF
+
+lua << EOF
+  -- Setup nvim-treesitter
+  require('nvim-treesitter').install { 'python' }
 EOF
 
 " Using Lua telescope functions "
@@ -205,7 +218,6 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 :set hlsearch
 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 :set autoindent
-:set pastetoggle=<f5>
 :set incsearch
 :set winminwidth=20
 :set winwidth=100
@@ -216,14 +228,9 @@ autocmd BufWritePre *.rkt lua vim.lsp.buf.formatting_sync(nil, 100)
 " :colorscheme desert " for solarized dark "
  nnoremap <F5> :checktime<CR>
 
-call setreg('z',':set nonumber
-:set norelativenumber
-','c')
-call setreg('x',':set number
-:set relativenumber
-','c')
-call setreg('i','$i
-k$','c') "for scheme coding convenience of unwrapping grouped up braces
+call setreg('z',':set nonumber:set norelativenumber','c')
+call setreg('x',':set number:set relativenumber','c')
+call setreg('i','$ik$','c') "for scheme coding convenience of unwrapping grouped up braces
 inoremap <C-H> <Left>
 inoremap <C-J> <Down>
 inoremap <C-K> <Up>
@@ -267,7 +274,7 @@ function! VimConfig()
 endfunction
 
 function! TmuxConfig()
-    :tabnew ~/.tmux.config
+    :tabnew ~/.tmux.conf
 endfunction
 
 function! ZshConfig()
