@@ -20,3 +20,12 @@ Install tmux plugins `~/.tmux/plugins/tpm/bin/install_plugins`
 For NodeJS development
 Install typescript-language-server with the command 
 `npm install -g typescript-language-server typescript`
+
+For dotnet development 
+Install latest dotnet
+Install roslyn language server with the command
+`dotnet tool install -g roslyn-language-server --prerelease --source https://pkgs.dev.azure.com/azure-public/vside/_packaging/vs-impl/nuget/v3/index.json`
+
+For python development
+Install tree sitter requirement
+`brew install tree-sitter-cli`
